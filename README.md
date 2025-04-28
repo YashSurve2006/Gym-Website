@@ -1,16 +1,36 @@
 # Gym-Website
 
-A simulation of client side e-commerce website with feature as add to cart, proceed for checkout and payment options. It simultes a shopping cart within a website.
+This is a client-side simulation of a gym membership website.
+The website includes a user login system, admin management, and user dashboard functionalities.
 
-Follow the following steps to view the project:
+How to View the Project
+Clone or Download this repository using the green Code button.
 
-Download the folder web1 using clone or download option on the right of the repository. OR Create a folder in your laptop preferably on Desktop and then download the files inside the folder.
+OR
 
-Once you are done with downloads please note that the names of files and images as well as the image folder must be same as the uploaded files in the repository since they have been used inside the codes with their paths.
+Create a folder on your computer (preferably on Desktop).
 
-Now you are all set to view the project.
+Download all the source files from the repository and place them inside the folder.
 
-open "index.html" file with your browser(any).
+Important:
+Please ensure the file names and folder structure remain exactly the same as in the repository, otherwise some links may break.
 
-For further simulation you will we instructed in the web page such as add to cart will take to "your cart" and then you can choose the more options on cart page.
+Open the Project:
+
+Locate the main.html file.
+
+Right-click and open it with any web browser (Chrome, Firefox, Edge, etc.).
+
+Website Features
+Home Page (main.html):
+Displays information about the gym, available plans, and services.
+
+User Login (login.html & login.js):
+Users can log in with their credentials to access their membership details.
+
+Admin Panel (admin.html & admin.js):
+Admins can view and manage registered user information.
+
+User Dashboard (user.html & user.js):
+Logged-in users can view and update their gym membership status.
 
