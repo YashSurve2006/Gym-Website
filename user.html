@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FITNESS MANTRA Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        nav {
+            background-color: #333;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        nav button {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        nav button:hover {
+            background-color: #d32f2f;
+        }
+        section {
+            padding: 40px 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        form button {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        form button:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#calculator">Health Calculator</a></li>
+        </ul>
+        <button onclick="logout()">Logout</button>
+    </nav>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+                <textarea id="message" placeholder="Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="contactMessage" style="display: none;">Response recorded. Our team will contact you soon.</p>
+        </div>
+    </section>
+
+    <section id="calculator">
+        <div class="container">
+            <h2>Health Calculator</h2>
+            <form id="bmiForm">
+                <input type="number" id="age" placeholder="Age" required>
+                <input type="number" id="weight" placeholder="Weight (kg)" required>
+                <input type="number" id="height" placeholder="Height (cm)" required>
+                <button type="submit">Calculate BMI</button>
+            </form>
+            <p id="bmiResult"></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Gym. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function logout() {
+            window.location.href = 'login.html'; // Redirect to login page
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('contactMessage').style.display = 'block';
+            document.getElementById('contactForm').reset();
+        });
+
+        document.getElementById('bmiForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var weight = document.getElementById('weight').value;
+            var height = document.getElementById('height').value;
+            var bmi = (weight / (height * height)) * 10000;
+            document.getElementById('bmiResult').innerText = 'Your BMI is: ' + bmi.toFixed(2);
+        });
+    </script>
+</body>
+</html>

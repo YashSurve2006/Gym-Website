@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FITNESS MANTRA - Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #a8edea, #fed6e3);
+      color: #333;
+    }
+
+    header {
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-bottom: 3px solid #ff6f61;
+    }
+
+    header h1 {
+      font-size: 24px;
+      color: #ff6f61;
+      margin: 0;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #ff6f61;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #ff4c39;
+      transform: scale(1.1);
+    }
+
+    .banner {
+      text-align: center;
+      padding: 70px 20px;
+      background: linear-gradient(120deg, #fdfbfb, #ebedee);
+      color: #444;
+      border-bottom: 5px solid #ff6f61;
+    }
+
+    .banner h2 {
+      font-size: 42px;
+      margin: 0;
+      color: #ff6f61;
+    }
+
+    .banner p {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #666;
+    }
+
+    /* Containers */
+    .container {
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 1200px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      min-height: 150px; /* Ensures consistent height across all containers */
+    }
+
+    .container h2 {
+      color: #ff6f61;
+    }
+
+    .container p, .container form {
+      color: #555;
+    }
+
+    /* Countdown Section Styling */
+    #countdown-section {
+      text-align: center;
+    }
+
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .countdown-item {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .countdown-item span {
+      display: block;
+      font-size: 16px;
+      color: #666;
+    }
+
+    /* Contact section styling */
+    #contact {
+      padding: 40px;
+      font-size: 18px;
+    }
+
+    #contact label {
+      font-weight: bold;
+    }
+
+    #contact input, #contact textarea, #contact button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+    }
+
+    #contact button {
+      background-color: #ff6f61;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #contact button:hover {
+      background-color: #ff4c39;
+    }
+
+    /* Footer styling */
+    footer {
+      background-color: #ff6f61;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>FITNESS MANTRA Portal</h1>
+    <div class="nav-buttons">
+      <a href="#blogs">Blogs</a>
+      <a href="#about-us">About Us</a>
+      <a href="#" id="loginBtn">Login</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <section class="banner">
+    <h2>Welcome to Our Gym</h2>
+    <p>"Your Journey to Strength, Wellness, and a Healthier You Starts Here."</p>
+  </section>
+
+<!-- Blogs Section -->
+<div class="container" id="blogs" style="background-color: #f9f9f9; padding: 40px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+  <h2 style="text-align: center; font-size: 36px; color: #ff6f61; margin-bottom: 20px;">Our Latest Blogs</h2>
+  <p class="subheading" style="text-align: center; font-size: 20px; color: #555; margin-bottom: 30px;">Discover insightful articles to enhance your fitness journey.</p>
+  <div class="blog-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px;">
+    <div class="blog-item" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+      <h3 style="font-size: 22px; color: #333; margin-bottom: 10px;">1. How Regular Exercise Improves Heart Health</h3>
+      <p style="font-size: 16px; color: #666; line-height: 1.6;">Exercise strengthens the heart and improves blood circulation, which can reduce the risk of heart diseases. Learn more about the impact of physical activity on your cardiovascular system.</p>
+      <a href="https://www.health.harvard.edu/heart-health/the-many-ways-exercise-helps-your-heart" style="display: inline-block; margin-top: 10px; font-size: 16px; color: #ff6f61; text-decoration: none;">Read More</a>
+    </div>
+    <div class="blog-item" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+      <h3 style="font-size: 22px; color: #333; margin-bottom: 10px;">2. Mental Health Benefits of Exercise</h3>
+      <p style="font-size: 16px; color: #666; line-height: 1.6;">Regular physical activity reduces stress, anxiety, and depression. Discover how exercise can significantly improve your mental well-being.</p>
+      <a href="https://www.healthdirect.gov.au/exercise-and-mental-health" style="display: inline-block; margin-top: 10px; font-size: 16px; color: #ff6f61; text-decoration: none;">Read More</a>
+    </div>
+    <div class="blog-item" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+      <h3 style="font-size: 22px; color: #333; margin-bottom: 10px;">3. Weight Loss and Boosted Metabolism Through Exercise</h3>
+      <p style="font-size: 16px; color: #666; line-height: 1.6;">Exercise accelerates metabolism and promotes fat burning, making it an essential part of any weight loss plan. Explore the science behind exercise and weight loss.</p>
+      <a href="https://www.health.harvard.edu/blog/exercise-metabolism-and-weight-new-research-from-the-biggest-loser-202201272676" style="display: inline-block; margin-top: 10px; font-size: 16px; color: #ff6f61; text-decoration: none;">Read More</a>
+    </div>
+    <div class="blog-item" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+      <h3 style="font-size: 22px; color: #333; margin-bottom: 10px;">4. The Role of Exercise in Building Strong Muscles and Bones</h3>
+      <p style="font-size: 16px; color: #666; line-height: 1.6;">Learn how strength training and weight-bearing exercises help in muscle and bone development, reducing the risk of osteoporosis and fractures as you age.</p>
+      <a href="https://www.health.harvard.edu/staying-healthy/strength-training-builds-more-than-muscles" style="display: inline-block; margin-top: 10px; font-size: 16px; color: #ff6f61; text-decoration: none;">Read More</a>
+    </div>
+    <div class="blog-item" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+      <h3 style="font-size: 22px; color: #333; margin-bottom: 10px;">5. Exercise for Increased Energy and Productivity</h3>
+      <p style="font-size: 16px; color: #666; line-height: 1.6;">Discover how regular exercise increases your energy levels, boosts productivity, and enhances your overall performance throughout the day.</p>
+      <a href="https://www.health.harvard.edu/exercise-and-fitness/does-exercise-really-boost-energy-levels" style="display: inline-block; margin-top: 10px; font-size: 16px; color: #ff6f61; text-decoration: none;">Read More</a>
+    </div>
+  </div>
+</div>
+
+<!-- About Us Section -->
+<div class="container" id="about-us" style="background-color: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+  <h2 style="text-align: center; font-size: 36px; color: #ff6f61; margin-bottom: 20px;">About Us</h2>
+  <p style="text-align: center; font-size: 20px; color: #555; margin-bottom: 30px;">At FITNESS MANTRA, we're more than just a gym. We're a thriving community of passionate individuals united by one goal: to lead healthier, happier lives. Our expert trainers, state-of-the-art facilities, and supportive atmosphere are here to help you achieve your fitness goals and beyond.</p>
+  <div class="about-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+    <div class="about-item" style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+      <h3 style="font-size: 22px; color: #ff6f61; margin-bottom: 15px;">Our Mission</h3>
+      <p style="font-size: 16px; color: #666; line-height: 1.6;">Our mission is simple: to empower individuals to live their healthiest lives through personalized fitness plans, expert guidance, and a supportive community. Whether you're just starting your fitness journey or looking to level up, we're here to help you succeed.</p>
+    </div>
+    <div class="about-item" style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+      <h3 style="font-size: 22px; color: #ff6f61; margin-bottom: 15px;">Our Values</h3>
+      <p style="font-size: 16px; color: #666; line-height: 1.6;">We believe in the power of consistency, dedication, and community. Our values are grounded in creating a welcoming environment for all fitness levels, where everyone can feel motivated and supported to reach their full potential. Together, we are stronger!</p>
+    </div>
+    <div class="about-item" style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+      <h3 style="font-size: 22px; color: #ff6f61; margin-bottom: 15px;">Join Our Community</h3>
+      <p style="font-size: 16px; color: #666; line-height: 1.6;">When you join FITNESS MANTRA, you're not just signing up for a gym—you're joining a community. Whether you're here to build strength, improve your fitness, or meet like-minded people, our team and members will be here to support you every step of the way.</p>
+    </div>
+  </div>
+  <div class="about-footer" style="text-align: center; margin-top: 40px;">
+    <p style="font-size: 18px; color: #555;">Come experience the difference at FITNESS MANTRA. Together, we will achieve greatness!</p>
+    <a href="#contact" style="font-size: 18px; color: #ff6f61; text-decoration: none; font-weight: bold;">Get in Touch</a>
+  </div>
+</div>
+
+  <!-- Countdown Section -->
+<div class="container" id="countdown-section">
+  <h2 style="font-size: 48px;">Upcoming Events</h2>
+  <p style="font-size: 22px;">Join our next fitness bootcamp starting soon!</p>
+  <div class="countdown-timer">
+    <div class="countdown-item" style="font-size: 28px;">
+      <span id="days" style="font-size: 20px;">00</span>
+      Days
+    </div>
+    <div class="countdown-item" style="font-size: 28px;">
+      <span id="hours" style="font-size: 20px;">00</span>
+      Hours
+    </div>
+    <div class="countdown-item" style="font-size: 28px;">
+      <span id="minutes" style="font-size: 20px;">00</span>
+      Minutes
+    </div>
+    <div class="countdown-item" style="font-size: 28px;">
+      <span id="seconds" style="font-size: 20px;">00</span>
+      Seconds
+    </div>
+  </div>
+</div>
+
+  <!-- Contact Section -->
+  <div class="container" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" placeholder="Your Email" required><br><br>
+      <label for="phone">Phone:</label><br>
+      <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required><br><br>
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" placeholder="Write your message here..." rows="6" required></textarea><br><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Connect with us:</p>
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+    <a href="https://facebook.com" target="_blank">Facebook</a>
+    <a href="https://twitter.com" target="_blank">Twitter</a>
+  </footer>
+
+  <!-- Countdown Timer Script -->
+  <script>
+    // Assign the event date and time
+    const eventDate = new Date('2024-12-31T23:59:59').getTime(); // Set your desired date and time here
+
+    // Function to update the countdown every second
+    function updateCountdown() {
+      const now = new Date().getTime(); // Current time
+      const timeLeft = eventDate - now; // Time remaining
+
+      if (timeLeft > 0) {
+        // Calculate days, hours, minutes, and seconds
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000)) / 1000);
+
+        // Update the DOM elements
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = hours;
+        document.getElementById('minutes').textContent = minutes;
+        document.getElementById('seconds').textContent = seconds;
+      } else {
+        // If the countdown is over, display a message
+        clearInterval(timer);
+        document.getElementById('countdown-section').innerHTML = '<h2>The event has started!</h2>';
+      }
+    }
+
+    // Run the updateCountdown function every second
+    const timer = setInterval(updateCountdown, 1000);
+
+    // Initial call to display the countdown immediately
+    updateCountdown();
+  </script>
+  <script>
+    // Event listener for login button to redirect to login.html
+    document.getElementById('loginBtn').addEventListener('click', function(e) {
+      e.preventDefault();  // Prevent the default action (link behavior)
+      window.location.href = 'login.html';  // Redirect to login page
+    });
+  </script>
+</body>
+</html>

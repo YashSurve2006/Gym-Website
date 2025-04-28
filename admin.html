@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #000000;
+            padding: 24px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 46px; /* Increased font size */
+        }
+        header p {
+            font-size: 22px;
+            color: #f9f9f9;
+        }
+        /* Styling for the Logout Button within the Header */
+        nav button {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 18px; /* Slightly larger font size */
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav button:hover {
+            background-color: #d32f2f;
+        }
+        .register-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #e46e6e;
+            font-size: 28px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form input, form select, form button {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #1f1e1e;
+            box-sizing: border-box;
+        }
+        form input, form select {
+            background-color: #ffffff;
+        }
+        form button {
+            background-color: #1c1a1a;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        form button:hover {
+            background-color: #555;
+        }
+        label {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        #confirmationMessage {
+            display: none;
+            margin-top: 10px;
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+        /* Styling for the Members List Table */
+        .members-list {
+            margin-top: 40px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        .members-list th, .members-list td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .members-list th {
+            background-color: #ff6f61;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <p>Manage and view all registered clients</p>
+        <nav>
+            <button onclick="logout()">Logout</button>
+        </nav>
+    </header>
+
+    <!-- Register Client Form -->
+    <div class="register-container">
+        <h1>Register Client</h1>
+        <form id="registerForm">
+            <input type="text" id="clientName" placeholder="Name" required>
+            <input type="number" id="clientAge" placeholder="Age" required>
+            <input type="number" id="clientHeight" placeholder="Height (cm)" required>
+            <input type="number" id="clientWeight" placeholder="Weight (kg)" required>
+            <label for="disorder">Any disorder?</label>
+            <select id="disorder">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+            <input type="number" id="subscriptionCharge" placeholder="Subscription Charge (₹)" required>
+            <button type="submit">Register</button>
+        </form>
+        <p id="confirmationMessage">Client successfully registered!</p>
+    </div>
+
+    <!-- Members List -->
+    <div class="register-container">
+        <h1>Members List</h1>
+        <table class="members-list" id="membersTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                    <th>Disorder</th>
+                    <th>Subscription Charge</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- List of members will be displayed here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let members = []; // Array to store registered members
+
+        function logout() {
+            window.location.href = 'login.html'; // Redirect to login page
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get the values from the form
+            const clientName = document.getElementById('clientName').value;
+            const clientAge = document.getElementById('clientAge').value;
+            const clientHeight = document.getElementById('clientHeight').value;
+            const clientWeight = document.getElementById('clientWeight').value;
+            const disorder = document.getElementById('disorder').value;
+            const subscriptionCharge = document.getElementById('subscriptionCharge').value;
+
+            // Create a new client object
+            const newClient = {
+                name: clientName,
+                age: clientAge,
+                height: clientHeight,
+                weight: clientWeight,
+                disorder: disorder,
+                subscriptionCharge: subscriptionCharge
+            };
+
+            // Add the new client to the members array
+            members.push(newClient);
+
+            // Display the confirmation message
+            document.getElementById('confirmationMessage').style.display = 'block';
+
+            // Reset the form fields
+            document.getElementById('registerForm').reset();
+
+            // Update the members list table
+            updateMembersList();
+        });
+
+        function updateMembersList() {
+            const tableBody = document.getElementById('membersTable').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = ''; // Clear the existing table rows
+
+            members.forEach(client => {
+                const row = tableBody.insertRow();
+                row.innerHTML = `  
+                    <td>${client.name}</td>
+                    <td>${client.age}</td>
+                    <td>${client.height}</td>
+                    <td>${client.weight}</td>
+                    <td>${client.disorder}</td>
+                    <td>₹${client.subscriptionCharge}</td>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
