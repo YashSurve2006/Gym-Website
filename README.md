@@ -22,6 +22,7 @@ Locate the main.html file.
 Right-click and open it with any web browser (Chrome, Firefox, Edge, etc.).
 
 Website Features
+
 Home Page (main.html):
 Displays information about the gym, available plans, and services.
 
@@ -35,6 +36,7 @@ User Dashboard (user.html & user.js):
 Logged-in users can view and update their gym membership status.
 
 Tech Stack
+
 HTML5
 
 CSS3
