@@ -34,3 +34,15 @@ Admins can view and manage registered user information.
 User Dashboard (user.html & user.js):
 Logged-in users can view and update their gym membership status.
 
+Tech Stack
+HTML5
+
+CSS3
+
+JavaScript (Vanilla JS)
+
+Author
+Yash Surve
+YashSurve2006
+
+
