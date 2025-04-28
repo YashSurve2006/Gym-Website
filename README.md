@@ -41,7 +41,7 @@ HTML5
 
 CSS3
 
-JavaScript (Vanilla JS)
+JavaScript
 
 Author
 Yash Surve
